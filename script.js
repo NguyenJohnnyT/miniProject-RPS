@@ -35,40 +35,39 @@ function playRPS () {
     alert('Computer picked: ' + computerInput)
     if (userInput === 'R' && computerInput === "R") { //user picked R && //computer picked R
         alert('You tie!');
-        scoreBoard[ties] += 1;
+        scoreBoard.ties += 1;
     } else if (userInput === 'R' && computerInput === "P") { //RVP
         alert('You lose!');
-        scoreBoard[losses] += 1;
+        scoreBoard.losses += 1;
     } else if (userInput === 'R' && computerInput === "S") { //RVS
         alert('You win!');
-        scoreBoard[wins] += 1;
+        scoreBoard.wins += 1;
     } else if (userInput === 'P' && computerInput === "R") { //PVR
         alert('You win!');
-        scoreBoard[wins] += 1;
+        scoreBoard.wins += 1;
     } else if (userInput === 'P' && computerInput === "P") { //PVP
         alert('You tie!'); 
-        scoreBoard[ties] += 1;  
+        scoreBoard.ties += 1;  
     } else if (userInput === 'P' && computerInput === "S") { //PVS
         alert('You lose!');;
-        scoreBoard[losses] += 1;
+        scoreBoard.losses += 1;
     } else if (userInput === 'S' && computerInput === "R") { //SVR
         alert('You lose!');
-        scoreBoard[losses] += 1;
+        scoreBoard.losses += 1;
     } else if (userInput === 'S' && computerInput === "P") { //SVP
         alert('You win!')
-        scoreBoard[wins] += 1;
+        scoreBoard.wins += 1;
     } else if (userInput === 'S' && computerInput === "S") { //SVS
         alert('You tie!')
-        scoreBoard[ties] += 1
-    } else { 
-        alert('Bad input, please enter R, P, or S')
-    }
+        scoreBoard.ties += 1
+    } else {alert('Bad input, please enter R, P, or S')}
 
     alert(
-        'Current scores: %0D%0A' +
-        'Wins: ' + scoreBoard[wins] + '%0D%0A' +
-        'Losses: ' + scoreBoard[losses]  + '%0D%0A' +
-        'Ties: ' + scoreBoard[ties]
+        'Current scores: \n' +
+        'Wins: ' + scoreBoard.wins + '\n' +
+        'Losses: ' + scoreBoard.losses + '\n' +
+        'Ties: ' + scoreBoard.ties
+        // 'hello please say somethign'
     )
 
     var playAgain = confirm('Would you like to play again?')
